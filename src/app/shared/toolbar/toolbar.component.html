@@ -2,10 +2,10 @@
     <button *ngIf="showBackButton" mat-icon-button [routerLink]="['/']">
       <mat-icon>keyboard_backspace</mat-icon>
     </button>
-    <span class="example-spacer"></span>
+    <span class="toolbar-spacer"></span>
     {{title}}
-    <span class="example-spacer"></span>
-    <mat-icon [matBadge]="itemsInCart" matBadgeColor="warn">home</mat-icon>
+    <span class="toolbar-spacer"></span>
+    <mat-icon [matBadge]="itemsInCart" matBadgeColor="warn">shopping_cart</mat-icon>
   </mat-toolbar>
 
 
