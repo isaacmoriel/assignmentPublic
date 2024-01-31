@@ -45,7 +45,7 @@ export class ShopItemComponent implements OnInit {
     {
       horizontalPosition: "start",
       verticalPosition: "bottom",
-      duration: 1000
+      duration: 1000,
     }
     )
   }

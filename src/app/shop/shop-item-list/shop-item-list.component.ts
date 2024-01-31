@@ -22,7 +22,7 @@ export class ShopItemListComponent implements OnInit {
   ngOnInit() {
    
     this.cafeList = this.webService.getItemList();
-    this.toolbarService.setTitle('CaFe List');
+    this.toolbarService.setTitle('CoFFees List');
     this.toolbarService.setHomePageBackBtn(false);
   }
 

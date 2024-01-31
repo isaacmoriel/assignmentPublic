@@ -1,11 +1,12 @@
 <mat-card>
   <mat-card-header>    
     <mat-card-title>{{item.Name}}</mat-card-title>
-    <mat-card-subtitle>Cafe Name</mat-card-subtitle>
+    <mat-card-subtitle>Coffee</mat-card-subtitle>
   </mat-card-header>
   <mat-card-content>
     <img style="height: 200px;" [src]="item.Image"/><br>
-    Price:${{item.Price}}</mat-card-content>
+    <b>Description:</b> {{item.Description}} <br>
+    <b>Price:</b> ${{item.Price}}</mat-card-content>
   <mat-card-actions>
     <button mat-raised-button (click)="addToCart()">Add to Cart</button>
     

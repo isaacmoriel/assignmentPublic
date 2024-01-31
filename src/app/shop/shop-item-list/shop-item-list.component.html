@@ -1,6 +1,13 @@
 <div>Please select one</div>
-<mat-list >
-  <mat-list-item *ngFor="let cafe of cafeList" (click)="navigateToDetails(cafe)">
-    {{cafe.Name}}
-  </mat-list-item>
-</mat-list>
+<mat-card>  
+  <mat-list >
+    @for(cafe of cafeList; track cafe.Id){
+      <mat-list-item (click)="navigateToDetails(cafe)">
+        {{cafe.Name}}
+        
+      </mat-list-item>
+      <mat-divider></mat-divider>
+    }
+    
+  </mat-list>
+</mat-card>
