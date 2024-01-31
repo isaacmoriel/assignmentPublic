@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 import { ShopItem } from '../../Models/ShopItem';
 import { WebAPIService } from '../../services/webAPI.service';
+import { ToolbarService } from '../../services/toolbar.service';
 
 @Component({
   selector: 'app-shop-item-list',
@@ -13,18 +14,26 @@ export class ShopItemListComponent implements OnInit {
 
   constructor(
     public webService:WebAPIService,
+    private toolbarService: ToolbarService,
     private router: Router) { }
 
-  ItemList:ShopItem[]=[];
+  cafeList:ShopItem[]=[];
 
   ngOnInit() {
    
-    this.ItemList = this.webService.getItemList();
+    this.cafeList = this.webService.getItemList();
+    this.toolbarService.setTitle('CaFe List');
+    this.toolbarService.setHomePageBackBtn(false);
   }
 
-  navigateToDetails(item:ShopItem){
-    console.log(item);
-    this.router.navigate(['item'+'/'+item.Id]);
+  navigateToDetails(cafe:ShopItem){
+    if(cafe == undefined || cafe.Id == 0){
+      //send error message in the meantime throw error
+      throw console.error('item select is empty or has Id 0');
+      
+    }
+    //navigate to detail page
+    this.router.navigate(['item'+'/'+cafe.Id]);
   }
 
 }

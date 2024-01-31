@@ -1,40 +1,41 @@
 import { ShopItem } from "../Models/ShopItem";
 
+//Only used to Mocked Data;
 export class ItemData {
     public List:ShopItem[] = [
         {
             Id:1,
-            Name:'',
+            Name:'Americano',
             Description:'',
-            Price:0,
+            Price:5,
             Image:'assets/Cappuccino.jpg'
         },
         {
             Id:2,
-            Name:'a',
+            Name:'Mocha',
             Description:'a',
-            Price:0,
-            Image:'assets/Cappuccino.jpg'
+            Price:6,
+            Image:'assets/mocha.jpg'
         },
         {
             Id:3,
-            Name:'b',
+            Name:'Macchiato',
             Description:'b',
-            Price:0,
+            Price:8.40,
             Image:'assets/Cappuccino.jpg'
         },
         {
             Id:4,
-            Name:'c',
+            Name:'Flat White',
             Description:'c',
-            Price:0,
-            Image:'assets/Cappuccino.jpg'
+            Price:6.5,
+            Image:'assets/cafewhite.jpg'
         },
         {
             Id:5,
-            Name:'d',
+            Name:'Cappuccino',
             Description:'d',
-            Price:0,
+            Price:9.10,
             Image:'assets/Cappuccino.jpg'
         },
 ]

@@ -1,6 +1,11 @@
-<p>
   <mat-toolbar color="primary">
+    <button *ngIf="showBackButton" mat-icon-button [routerLink]="['/']">
+      <mat-icon>keyboard_backspace</mat-icon>
+    </button>
+    <span class="example-spacer"></span>
+    {{title}}
+    <span class="example-spacer"></span>
     <mat-icon [matBadge]="itemsInCart" matBadgeColor="warn">home</mat-icon>
   </mat-toolbar>
-</p>
+
 

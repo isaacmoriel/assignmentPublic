@@ -6,6 +6,7 @@ import {MatSnackBar} from '@angular/material/snack-bar';
 import { ShopItem } from '../../Models/ShopItem';
 import { CartService } from '../../services/cart.service';
 import { WebAPIService } from '../../services/webAPI.service';
+import { ToolbarService } from '../../services/toolbar.service';
 
 @Component({
   selector: 'app-shop-item',
@@ -20,7 +21,8 @@ export class ShopItemComponent implements OnInit {
     private webapi: WebAPIService,
     private route: ActivatedRoute,
     private cartService: CartService,
-    private snackBar: MatSnackBar) { }
+    private snackBar: MatSnackBar,
+    private toolbarService: ToolbarService) { }
 
   ngOnInit() {
     let id;
@@ -30,8 +32,10 @@ export class ShopItemComponent implements OnInit {
       id = params['id'];
       this.item = this.webapi.getItem(id);
       console.log(JSON.stringify(this.item))
+      this.toolbarService.setTitle(this.item.Name)
+      this.toolbarService.setHomePageBackBtn(true);
       });
-    
+      
   }
 
   addToCart(){
@@ -40,8 +44,8 @@ export class ShopItemComponent implements OnInit {
     "",
     {
       horizontalPosition: "start",
-      verticalPosition: "top",
-      duration: 3000
+      verticalPosition: "bottom",
+      duration: 1000
     }
     )
   }
