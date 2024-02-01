@@ -35,7 +35,7 @@ export class ShopItemListComponent implements OnInit {
     
     if(cafe == undefined || cafe.Id == 0){
       //send error message in the meantime throw console
-       throw console.error("")
+       throw console.error("Cafe item shouldn't be empty or id be 0");
        
     }
     //navigate to detail page
