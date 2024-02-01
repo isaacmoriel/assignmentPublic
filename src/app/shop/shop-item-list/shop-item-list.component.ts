@@ -12,6 +12,7 @@ import { ToolbarService } from '../../services/toolbar.service';
 })
 export class ShopItemListComponent implements OnInit {
 
+  //Inject services and modules to be used in this component
   constructor(
     public webService:WebAPIService,
     private toolbarService: ToolbarService,
@@ -20,9 +21,11 @@ export class ShopItemListComponent implements OnInit {
   cafeList:ShopItem[]=[];
 
   ngOnInit() {
-   
+    //get list
     this.cafeList = this.webService.getItemList();
+    //send title of page to service
     this.toolbarService.setTitle('CoFFees List');
+    //set arrow or back button visible 
     this.toolbarService.setHomePageBackBtn(false);
   }
 

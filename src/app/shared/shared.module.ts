@@ -13,7 +13,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { RouterModule } from '@angular/router';
 
-
+//create list of modules that will be exported and imported
+//to make it easier to add them in one place.
 const material = [
   MatCardModule,
   MatToolbarModule,

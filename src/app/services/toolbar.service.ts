@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
+//set so in can be used in all application
 @Injectable({
   providedIn: 'root'
 })

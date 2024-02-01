@@ -22,12 +22,17 @@ export class ToolbarComponent implements OnInit {
   }
 
   ngOnInit() {
+
+    //subscribe to observers to catch changes in cart
     this.carService.selectedItems$.subscribe(val => {
       
       this.itemsInCart = this.cartList.length;
       this.cartList.push(val);
     })
 
+    //subscribe to changes made to observers to be display
+    //in toolbar, may be other methods like using 
+    //ngrx or storing toolbar changes in local or session storage 
     this.toolbarService.getTitle$.subscribe(val => {
       this.title = val;
     })

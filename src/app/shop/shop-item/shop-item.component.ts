@@ -15,8 +15,10 @@ import { ToolbarService } from '../../services/toolbar.service';
 })
 export class ShopItemComponent implements OnInit {
 
+  //the item/coffee for this component details
   public item:ShopItem = new ShopItem(); 
 
+  //inject services and modules needed in this component
   constructor(
     private webapi: WebAPIService,
     private route: ActivatedRoute,
@@ -24,14 +26,14 @@ export class ShopItemComponent implements OnInit {
     private snackBar: MatSnackBar,
     private toolbarService: ToolbarService) { }
 
-  ngOnInit() {
-    let id;
-    const routeParams = this.route.snapshot.paramMap;
-    const productIdFromRoute = Number(routeParams.get('Id'));
+  ngOnInit() {   
+    
+    //get the Id passed from the url, to pass it to
+    //the mocked web api service that will return 
+    //the item details
      this.route.params.subscribe(params => {
-      id = params['id'];
+      let id = params['id'];
       this.item = this.webapi.getItem(id);
-      console.log(JSON.stringify(this.item))
       this.toolbarService.setTitle(this.item.Name)
       this.toolbarService.setHomePageBackBtn(true);
       });
@@ -39,7 +41,17 @@ export class ShopItemComponent implements OnInit {
   }
 
   addToCart(){
-    this.cartService.setProduct({});
+    
+    if(this.item == undefined){
+      //send message if item wasn't defined
+      throw console.error('not a valid coffee item');
+      
+    }
+
+    //call method is cart service to keep track of 
+    //items being added to the card
+    this.cartService.setProduct(this.item);
+    //show snack bar
     this.snackBar.open("Added to Cart",
     "",
     {
