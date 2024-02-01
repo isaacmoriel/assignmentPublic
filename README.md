@@ -16,5 +16,5 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 ## PWA application
 
-By going into your browswer and clicking install. This web app can be installed in your Desktop, MAC, IPhone and Android devices and it will work in <ins>similar</ins> fashion as native app.
+By going into your browser and clicking install. This web app can be installed in your Desktop, MAC, IPhone and Android devices and it will work in <ins>similar</ins> fashion but not fully as native app.
 
