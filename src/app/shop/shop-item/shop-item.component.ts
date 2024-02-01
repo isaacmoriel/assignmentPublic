@@ -34,14 +34,14 @@ export class ShopItemComponent implements OnInit {
      this.route.params.subscribe(params => {
       let id = params['id'];
       this.item = this.webapi.getItem(id);
-      this.toolbarService.setTitle(this.item.Name)
+      this.toolbarService.setTitle(this.item.Name);
       this.toolbarService.setHomePageBackBtn(true);
       });
       
   }
 
   addToCart(){
-    
+   
     if(this.item == undefined){
       //send message if item wasn't defined
       throw console.error('not a valid coffee item');

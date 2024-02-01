@@ -12,13 +12,15 @@ import { ToolbarService } from '../../services/toolbar.service';
 })
 export class ShopItemListComponent implements OnInit {
 
+  cafeList:ShopItem[]=[];
+
   //Inject services and modules to be used in this component
   constructor(
     public webService:WebAPIService,
     private toolbarService: ToolbarService,
     private router: Router) { }
 
-  cafeList:ShopItem[]=[];
+  
 
   ngOnInit() {
     //get list
@@ -30,10 +32,11 @@ export class ShopItemListComponent implements OnInit {
   }
 
   navigateToDetails(cafe:ShopItem){
+    
     if(cafe == undefined || cafe.Id == 0){
-      //send error message in the meantime throw error
-      throw console.error('item select is empty or has Id 0');
-      
+      //send error message in the meantime throw console
+       throw console.error("")
+       
     }
     //navigate to detail page
     this.router.navigate(['item'+'/'+cafe.Id]);

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService } from '../../services/cart.service';
 import { ToolbarService } from '../../services/toolbar.service';
+import { ShopItem } from '../../Models/ShopItem';
 
 @Component({
   selector: 'app-toolbar',
@@ -9,7 +10,7 @@ import { ToolbarService } from '../../services/toolbar.service';
 })
 export class ToolbarComponent implements OnInit {
 
-  cartList:any[]=[];
+  cartList:ShopItem[]=[];
   itemsInCart:number = 0;
 
   title:string = '';
